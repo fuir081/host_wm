@@ -1,0 +1,1432 @@
+/********** Importaciones ********/
+
+@import url(reset.css);
+
+:root{
+	--c-blanco: #fffbd6;
+	--c-negro: #292929;
+	--c-ne: #1e1e1e;
+	--c-dorado: #d3c975;
+	--c-negroC: #343434;
+	--c-negroCC: #5c5c5c;
+}
+
+::selection{
+	color: var(--c-negro);
+	background: var(--c-negro);
+}
+
+
+html{
+	scroll-behavior: smooth;
+}
+
+/********* MODAL MENU **************/
+
+.mb-carta{
+	width: 100%;
+	height: 100%;
+	position: fixed;
+	top: -3000px;
+	background-color: rgba(0,0,0,0.0);
+	z-index: 2000;
+	display: flex;
+	flex-direction: row;
+	flex-wrap: wrap;
+	justify-content: center;
+	align-items: center;
+	transition: all ease .2s;
+}
+
+.mb-carta_e{
+	top: 0;
+	background-color: rgba(0,0,0,0.85);
+}
+
+.mb-carta img{
+	width: 90%;
+	min-height: 600px;
+	margin-left: -800px;
+	transition: all ease .5s;
+	margin-top: -2000px;
+}
+
+.mb-carta img.img-e{
+	margin-left: 0;
+	margin-top: 0;
+}
+
+.mb-carta button{
+	width: 20px;
+	background:none;
+	border: none;
+	font-family: "Mukta";
+	font-size: 1.8em;
+	color: var(--c-blanco);
+	position: absolute;
+	top: 15px;
+	right: 30px;
+	cursor: pointer;
+}
+
+
+
+
+
+
+/********* Modal Loading **********/
+
+.m-loader{
+	width: 100%;
+	height: 100%;
+	background-color: black;
+	position: fixed;
+	z-index: 1000;
+	top: 0;
+	background-position: center;
+	background-repeat: no-repeat;
+	background-size: cover;
+	display: flex;
+	justify-content: center;
+	flex-direction: column;
+	align-items: center;
+	
+}
+.m-loader img{
+	width: 200px;
+	height: 100px;
+	margin-top: 50px;
+}
+
+.m-loader .b-loader{
+	display: flex;
+	align-items: center;
+	margin-top: 15px;	
+}
+
+.m-loader .b-loader .circulo{
+	width: 20px;
+	height: 20px;
+	animation: bounce 1s 0.7s linear infinite;
+	border-radius: 100%;
+	margin: 10px;
+	background-color: rgb(252, 255, 209);
+}
+
+.m-loader  .b-loader .circulo:nth-child(2){
+	animation-delay: 0.2s;
+}
+
+.m-loader .b-loader .circulo:last-child{
+	animation-delay: 0.4s;
+}
+
+
+
+
+@keyframes bounce{
+	0%,
+	50%,
+	100%{
+		transform: scale(1);
+		filter: blur(0px);
+	}
+	25%{
+		transform: scale(0.6);
+
+	}
+	75%{
+		transform: scale(1.4);
+		background-color: rgb(230, 255, 107);
+	}
+}
+
+
+
+/**************** Menú Fixed********/
+
+.menu-fixed{
+	width: 80%;
+	padding: 30px 10% 0;
+	position: fixed;
+	background-color: var(--c-blanco);
+	z-index: 200;
+	top: -500px;
+	transition: all ease .5s;
+}
+
+.menu-fixed_e{
+	top: 0;
+}
+
+
+.menu-fixed ul li a{
+	color: var(--c-negro) !important;
+}
+
+.menu-fixed ul li:nth-child(4){
+	margin-top: -28px;
+}
+
+.menu-fixed ul li a hr{
+	background-color: var(--c-negro) !important;
+}
+
+/***************** HEADER ***************/
+
+header{
+	width: 100%;
+	height: 100%;
+	position: relative;
+	overflow: hidden;
+}
+
+
+.parallax{
+	width: 100%;
+	height: 100%;
+	background-position: right 0px;
+	background-size: 140%;
+	background-repeat: no-repeat;
+	position: absolute;
+	z-index: -50;
+}
+
+.m-filtro{
+	width: 100%;
+	height: 100%;
+	background-color: rgba(0,0,0,0.8);
+	position: absolute;
+	z-index: 0;
+}
+
+
+.i-menu{
+	width: 80%;
+	padding: 30px 10% 5px;
+	display: flex;
+	flex-wrap: wrap;
+	flex-direction: row;
+	justify-content: space-between;
+	
+}
+.i-menu > div:first-child{
+	width: 50%;
+	display: flex;
+	justify-content: flex-start;
+}
+
+.i-menu > div:last-child{
+	width: 50%;
+	display: flex;
+	justify-content: flex-end;
+}
+
+.i-menu > div:last-child a{
+	margin-right: 5%;
+}
+
+.i-menu > div a{
+	color: var(--c-blanco);
+	font-family: "MuktaM";
+	text-transform: uppercase;
+	font-size: 0.8em;
+	letter-spacing: 3px;
+}
+
+.i-menu >div a span{
+	font-size: 15px;
+	margin-right: 5px;
+}
+
+
+
+header nav{
+	position: inherit;
+}
+
+
+header nav hr{
+	background-color: rgba(111, 111, 111, 0.7);
+}
+
+
+.m-menu{
+	width: 80%;
+	padding: 30px 10% 0;
+	
+}
+
+.m-menu ul,
+.menu-fixed ul{
+	width: 100%;
+	display: flex;
+	flex-wrap: wrap;
+	flex-direction: row;
+	justify-content: space-between;
+}
+
+.m-menu ul li a,
+.menu-fixed ul li a{
+	color: var(--c-blanco);
+	font-size: 1.3em;
+	text-transform: uppercase;
+	font-family: "Tw";
+	letter-spacing: 3px;
+}
+
+.m-menu ul li a::after{
+	content: "";
+	width: 1em;
+	width: 3px;
+	background-color: var(--c-dorado);
+	display: block;
+	position: absolute;
+	transition: all ease .5s;
+	
+}
+
+.m-menu ul li a:hover::after{
+	content: "";
+	width: 3em;
+	height: 3px;
+	background-color: var(--c-dorado);
+	display: block;
+	
+}
+
+.m-menu ul li a.no-e::after{
+	display: none;
+}
+
+
+
+.m-menu ul li:nth-child(4),
+.menu-fixed ul li:nth-child(4){
+	text-align: center;
+}
+.m-menu ul li:nth-child(4) a,
+.menu-fixed ul li:nth-child(4) a{
+	font-size: 1.8em;
+	color: white;
+}
+
+.m-menu ul li:nth-child(4) a hr,
+.menu-fixed ul li:nth-child(4) a hr{
+	height: 2px;
+	background-color: white;
+}
+
+.m-menu ul li:nth-child(4) a span,
+.menu-fixed ul li:nth-child(4) a span{
+	font-size: 1.4em;
+}
+
+.m-menu ul li:last-child,
+.menu-fixed ul li:last-child{
+	height: 22px;
+	padding: 5px 7px;
+	border-radius: 50px;
+	background-color: var(--c-blanco);
+	transition: all ease .4s;
+
+}
+
+.m-menu ul li:last-child:hover{
+	background-color: var(--c-dorado);
+}
+
+
+.m-menu ul li:last-child a{
+	color: var(--c-negro);
+}
+
+.b-inicio{
+	width: 100%;
+	height: 100%;
+	text-align: center;
+	display: flex;
+	align-items: center;
+	flex-direction: column;
+	position: inherit;
+}
+
+
+.b-inicio h2{
+	font-size: 1.5em;
+	font-family: "Mukta";
+	text-transform: uppercase;
+	color: var(--c-dorado);
+	letter-spacing: 5px;
+	margin-top: 100px;
+	
+}
+
+.b-inicio hr{
+	width: 200px;
+	background-color: var(--c-dorado);
+}
+
+.b-inicio h1{
+	font-family: "Play";
+	font-size: 3.2em;
+	color: var(--c-blanco);
+	letter-spacing: 7px;
+	text-transform: uppercase;
+	margin-top: 50px;
+}
+
+.a.btn-m,
+a.btn-m{
+	
+	padding: 10px 45px;
+	border: solid 1px var(--c-dorado);
+	color: var(--c-dorado);
+	margin-top: 30px;
+	border-radius: 50px;
+	font-size: 1em;
+	font-family: "Mukta";
+	letter-spacing: 5px;
+	text-transform: uppercase;
+	display: flex;
+	align-items: center;
+	overflow: hidden;
+	position: relative;
+    z-index: 200;
+}
+
+a.btn-m:hover,
+a.btn-m:hover{
+	color: var(--c-negro);
+}
+
+a.btn-m::after,
+a.btn-m::after{
+	content: "";
+    background-color: transparent;
+    width: 50px;
+    height: 49px;
+    transition: ease all .5s;
+    position: absolute;
+    z-index: -1;
+    margin: -11px -45px;
+    border-radius: 50px;
+
+}
+
+
+
+
+a.btn-m:hover::after,
+a.btn-m:hover::after{
+	content: "";
+    background-color: white;
+    width: 258px;
+    height: 49px;
+    transition: linear all .2s;
+    position: absolute;
+    z-index: -1;
+    margin: -11px -45px;
+    border-radius: 50px;
+
+}
+
+
+
+.b-inicio .btn-bajar{
+	width: 100px;
+	height: 85px;
+	
+	display: flex;
+	align-items: center;
+	flex-direction: column;
+	margin-top: 70px;
+}
+
+.b-inicio .btn-bajar a{
+	display: flex;
+	align-items: center;
+	flex-direction: column;
+}
+
+.b-inicio .btn-bajar a img:first-child{
+	width: 50px;
+	height: 30px;
+	position: absolute;
+	transition: all ease .5s;
+	animation: e-tri 1s 0.7s linear infinite;
+	animation-delay: .6s;
+
+
+}
+.b-inicio .btn-bajar a img:last-child{
+	width: 80px;
+	height: 55px;
+	position: absolute;
+	margin-top: 10px;
+	transition: all ease .5s;
+	animation: e-tri 1s 0.7s linear infinite;
+	animation-delay: .10s;
+}
+
+@keyframes e-tri {
+	0%,
+	50%,
+	100%{
+		margin-top: 8px;
+	}25%{
+		margin-top: 5px;
+	}50%{
+		margin-top: 3px;
+	}75%{
+		margin-top: 5pxs;
+	}
+}
+
+
+
+/****** MENU RESPONSIVE***************/
+
+.r-menu{
+	display: none;
+	width: 100%;
+}
+
+.btn-res{
+	width: 50px;
+	height: 25px;
+	display: flex;
+	align-items: center;
+	flex-direction: column;
+	position: absolute;
+	right: 5%;
+	margin-top: 50px;
+	cursor: pointer;
+	transition: all ease .5s;
+	z-index: 400;
+}
+
+.btn-resE{
+	margin-top: 60px;
+}
+
+.btn-res>div {
+	width: 40px;
+	height: 3px;
+	margin: 2.5px 0;
+	background-color: var(--c-blanco);
+	border-radius: 5px;
+	transition: all ease .5s;
+}
+
+
+.btn-res>div.res-e2{
+	display: none;
+}
+
+.btn-res>div.res-e:first-child{
+	transform: rotateZ(45deg);
+	margin-top: -5px;
+}
+.btn-res>div.res-e:last-child{
+	transform: rotateZ(-45deg);
+	margin-top: -5px;
+}
+
+
+.r-menu img{
+	width: 150px;
+	float: left;
+	margin-left: 5%;
+	margin-top: 30px;
+}
+
+
+.r-menu ul{
+	width: 200px;
+	height: 100vmax;
+	padding: 20px 0;
+	display: flex;
+	flex-direction: column;
+	position: fixed;
+	background-color: var(--c-ne);
+	align-items: center;
+	top: 0;
+	z-index: 300;
+	left: -1000px;
+	transition: all ease .5s;
+}
+
+.r-menu ul.e-ul{
+	left: 0;
+}
+
+.r-menu ul::before{
+	content: "";
+	width: 100%;
+	height: 100%;
+	position: fixed;
+	z-index: -1;
+	top: 0;
+	left: -500px;
+	transition: all cubic-bezier(0.56, 0.15, 0.78, 0.28) .8s;
+	background-color: rgba(0,0,0,0.0);
+
+}
+
+.r-menu ul.e-ul::before{
+	left: 0;
+	background-color: rgba(0,0,0,0.8);
+	border-radius: 0;
+}
+.r-menu>ul>li:first-child{
+	margin-top: 0;
+}
+
+.r-menu>ul>li{
+	margin: 20px 0;
+}
+.r-menu>ul>li>div>a>span{
+	color: var(--c-blanco);
+}
+
+.r-menu>ul>li>div>a>span:hover{
+	color: var(--c-dorado);
+}
+
+.r-menu>ul>li> a{
+	margin: 40px 0;
+	padding: 20px 10%;
+	color: var(--c-blanco);
+	font-family: "Mukta";
+	font-size: 0.8em;
+	letter-spacing: 3px;
+	text-transform: uppercase;
+}
+
+.r-menu>ul>li> a:hover{
+	color: var(--c-dorado);
+}
+
+
+
+
+
+
+
+/***************** contenido*******************/
+
+
+main{
+	width: 100%;
+	height: auto;
+	overflow: hidden;
+	
+}
+
+
+/*********** contenido especial *******************/
+
+main .b-especial{
+	width: 100%;
+	height: auto;
+	position: relative;
+	overflow: hidden;
+	display: flex;
+	align-items: center;
+	flex-direction: column;
+	padding: 30px 0;
+	background-color: var(--c-negro);
+}
+
+main .b-especial .prx-fondo{
+	width: 100%;
+	height: 100%;
+	background-position: left;
+	background-size: contain;
+	background-repeat: no-repeat;
+	position: absolute;
+	top: -20px;
+	left: 0;
+	transition:all ease .2s;
+}
+
+main .b-especial .i-especial{
+	z-index: 100;
+	text-align: center;
+	width: 100%;
+	display: flex;
+	align-items: center;
+	flex-direction: column;
+}
+
+main .b-especial .i-especial h1{
+	font-size: 1.2em;
+	font-family: "Mukta";
+	color: var(--c-dorado);
+	text-transform: uppercase;
+	letter-spacing: 5px;
+	margin-top: 80px;
+}
+
+main .b-especial .i-especial>hr{
+	background-color: var(--c-dorado);
+	width: 300px;
+}
+
+main .b-especial .i-especial h2{
+	font-size: 2.2em;
+	font-family: "Play";
+	color: var(--c-blanco);
+	margin-top: 100px;
+	font-family: "Play";
+	text-transform: uppercase;
+}
+
+main .b-especial .i-especial section{
+	width: 80%;
+	height: 430px;
+	padding: 10px 10%;
+	display: flex;
+	flex-wrap: wrap;
+	align-items: center;
+	overflow: hidden;
+	justify-content: space-between;
+}
+
+main .b-especial .i-especial section>div.box-ie{
+	width: 30%;
+	height: 75%;
+	background-size: cover;
+	background-position: center;
+	background-repeat: no-repeat;
+	overflow: hidden;
+}
+
+main .b-especial .i-especial section>.modal-especial{
+	width: 100%;
+	height: 100%;
+	background-color: var(--c-ne);
+	position: absolute;
+	z-index: 20;
+	top: 0;
+	left: -2500px;
+	transition: all ease .5s;
+	display: flex;
+	align-items: center;
+	flex-direction: row;
+	justify-content: space-evenly;
+}
+
+main .b-especial .i-especial section>.modal-especial_e{
+	left: 0;
+}
+
+main .b-especial .i-especial section>.modal-especial img{
+	width: 30%;
+	float: left;
+	margin-top: 100px 5%;
+}
+
+main .b-especial .i-especial section>.modal-especial>.info-especial{
+	width: 40%;
+	padding: auto 5%;
+	float: lefts;
+}
+
+main .b-especial .i-especial section>.modal-especial>.info-especial h1{
+	margin: -50px 0 50px;
+	font-size: 1.8em;
+	letter-spacing: 10px;
+}
+main .b-especial .i-especial section>.modal-especial>.info-especial p{
+	font-size: 1em;
+	font-family: "Mukta";
+	color: var(--c-blanco);
+	letter-spacing: 3px;
+}
+
+main .b-especial .i-especial section>div.box-ie:nth-child(2),
+main .b-especial .i-especial section>div.box-ie:last-child{
+	margin-top: -150px;
+}
+
+
+main .b-especial .i-especial section div.box-ie>div{
+	width: 100%;
+	height: 100%;
+	background-color: rgba(0,0,0,0.1);
+	position: relative;
+	top: -350px;
+	transition: all ease .4s;
+	overflow: hidden;
+	border-radius: 0 0 0%;
+}
+
+
+
+main .b-especial .i-especial section div.box-ie:hover>div{
+	top: 0px;
+	border-radius: 0px;
+	border-radius: 0 0;
+	background-color: rgba(0,0,0,0.6);
+	cursor: pointer;
+}
+
+main .b-especial .i-especial section div.box-ie>div a{
+	top: 400px;
+	font-size: 1.3em;
+	text-transform: uppercase;
+	letter-spacing: 2px;
+	position: relative;
+	color: var(--c-dorado);
+	font-family: "MuktaM";
+	transition: all ease 1s;
+	
+}
+
+main .b-especial .i-especial section div.box-ie:hover>div a{
+	top:100px
+}
+main .b-especial .i-especial section div.box-ie>div hr{
+	position: relative;
+	top: 400px;
+	background-color: var(--c-dorado);
+	transition: all ease 1s;
+}
+
+main .b-especial .i-especial section div.box-ie:hover>div hr{
+	top: 100px;
+}
+
+
+main .b-especial .i-especial section>div.box-ie:nth-child(2)::after{
+	content: "";
+    width: 250px;
+    height: 100px;
+    background-image: url(../img/malla.png);
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    position: absolute;
+    left: 8%;
+    top: 35%;
+    z-index: -1;
+}
+	
+main .b-especial .i-especial section>div.box-ie:last-child::after{
+	content: "";
+    width: 250px;
+    height: 100px;
+    background-image: url(../img/malla.png);
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    position: absolute;
+    right: 8%;
+    top: 35%;
+    z-index: -1;
+}
+main .b-especial .i-especial section>div.box-ie:nth-child(3)::after{
+	content: "";
+    width: 250px;
+    height: 100px;
+    background-image: url(../img/malla.png);
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    position: absolute;
+    right: 42%;
+    bottom: 5%;
+    z-index: -1;
+	transform: rotate(180deg);
+}
+
+
+
+
+
+
+
+/*********** contenido nosotros ***********/
+
+
+main .nosotros{
+	width: 100%;
+    height: auto;
+    background-color: var(--c-negroC);
+    padding: 10px 0;
+    overflow: hidden;
+}
+
+main .nosotros > div:first-child{
+	width: 35%;
+	padding: 80px 2.5%;
+	overflow: hidden;
+	text-align: center;
+	float: left;
+}
+
+main .nosotros > div:last-child{
+	width: 60%;
+	padding: 200px 0%;
+	overflow: hidden;
+	text-align: center;
+	float: left;
+	position: relative;;
+}
+
+main .nosotros > div:first-child h1{
+	color: var(--c-dorado);
+	font-size: 1.2em;
+	font-family: "Mukta";
+	text-transform: uppercase;
+	letter-spacing: 5px;
+}
+
+main .nosotros > div:first-child{
+	display: flex;
+	align-items: center;
+	flex-direction: column;
+}
+
+main .nosotros > div:first-child hr{
+	width: 200px;
+	background-color: var(--c-dorado);
+}
+
+main .nosotros > div:first-child h2{
+	margin-top: 50px;
+	color: var(--c-blanco);
+	font-family: "Play";
+	text-transform: uppercase;
+	letter-spacing: 3px;
+	font-size: 2.3em;
+
+}
+
+main .nosotros > div:first-child p{
+	margin: 50px;
+	color: var(--c-dorado);
+	font-family: "Mukta";
+	font-size: 1.2em;
+	letter-spacing: 2px;
+
+}
+
+
+main .nosotros >div:last-child img:first-child{
+	width: clamp(300px, 60%, 1200px);
+	transition: all ease .5s;
+}
+main .nosotros >div:last-child img:last-child{
+	width: clamp(180px, 35%, 800%);
+	position: absolute;
+	left: 0;
+	top: 480px;
+	transition: all ease .5s;
+}
+
+
+
+
+
+
+
+/************* SELECION ESPECIAL **************/
+
+.carta-s{
+	width: 100%;
+	height: 100%;
+	background-color: var(--c-negro);
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+	overflow: hidden;
+	padding: 40px 0 80px;
+}
+
+.carta-s>h1{
+	margin-top: 100px;
+	color: var(--c-dorado);
+	font-size: 1.2em;
+	font-family: "Mukta";
+	text-transform: uppercase;
+	letter-spacing: 5px;
+
+}
+
+.carta-s>hr{
+	width: 200px;
+	background-color: var(--c-dorado);
+}
+
+
+.carta-s>h2{
+	color: var(--c-blanco);
+	font-size: 2.2em;
+	font-family: "Play";
+	text-transform: uppercase;
+	letter-spacing: 5px;
+	margin-top: 50px;
+}
+
+.carta-s .b-carta{
+	width: 90%;
+	padding:50px 5%;
+}
+
+.carta-s .b-carta nav ul{
+	width: 100%;
+	display: flex;
+	align-items: center;
+	flex-wrap: wrap;
+	flex-direction: row;
+	justify-content: space-around;
+	border-top: solid 1px var(--c-dorado);
+	border-bottom: solid 1px var(--c-dorado);
+}
+
+.carta-s .b-carta nav ul li{
+	padding: 20px 0;
+	font-family: "Mukta";
+	color:var(--c-blanco);
+	text-transform: uppercase;
+	letter-spacing: 3px;
+	cursor: pointer;
+}
+
+.carta-s .b-carta nav ul li:hover{
+	color: var(--c-dorado);
+	
+}
+
+.carta-s .b-carta .b-c{
+	width: 100%;
+	display: flex;
+	flex-direction: row;
+	flex-wrap: wrap;
+}
+
+.carta-s .b-carta .b-c>div{
+	width: 45%;
+	padding-left: 5%;
+
+}
+
+.carta-s .b-carta .b-c>div>div{
+	width: 100%;
+	display: flex;
+	flex-direction: row;
+	align-items: center;
+	justify-content: space-evenly;
+	margin-top: 30px;
+}
+
+.carta-s .b-carta .b-c>div>div>div h1{
+	font-family: "Mukta";
+	font-size: 1.2em;
+	color: var(--c-blanco);
+	text-transform: uppercase;
+	letter-spacing: 3px;
+}
+.carta-s .b-carta .b-c>div>div>div h1 span{
+	margin-left: 10%;
+	color: var(--c-blanco);
+	font-family: "MuktaM";
+}
+
+.carta-s .b-carta .b-c>div>div>div h2{
+	color: var(--c-dorado);
+	font-family: "MuktaM";
+}
+
+
+
+	
+
+/***********EVENTOS **************/
+
+.evento{
+	width: 100%;
+	height: auto;
+	background-position: top;
+	background-size: 120%;
+	background-repeat: no-repeat;
+	z-index: -45;
+	display: flex;
+	align-items: center;
+	flex-direction: column;
+	text-align: center;
+	overflow: hidden;
+	
+}
+
+.evento>h1{
+	font-size: 1.2em;
+	font-family: "Mukta";
+	letter-spacing: 5px;
+	text-transform: uppercase;
+	color: var(--c-dorado);
+	margin-top: 100px;
+}
+
+.evento>hr{
+	width: 400px;
+	background-color: var(--c-dorado);
+
+}
+
+.evento>h2{
+	font-size: 1.8em;
+	font-family: "Play";
+	color: var(--c-blanco);
+	margin-top: 50px;
+	text-transform: uppercase;
+	letter-spacing: 5px;
+}
+
+
+.evento>h1, .evento>h2{
+	position: relative;
+	z-index: 1;
+}
+
+.evento>section{
+	position: relative;
+	z-index: 2;
+	width: clamp(200px, 80%, 850px);
+	margin-top: 50px;
+	background-color: var(--c-negro);
+	display: flex;
+}
+
+.evento>section>div:first-child{
+	width: 50%;
+	padding: 10px 5%;
+	text-align: left;
+
+}
+
+
+.evento>section>div:first-child h1{
+	font-family: "Mukta";
+	font-size: 1.6em;
+	text-transform: uppercase;
+	letter-spacing: 3px;
+	margin-bottom: 20px;
+	color: white;
+}
+
+.evento>section>div:first-child input{
+	width: clamp( 150px, 80%, 450px);
+	background-color: var(--c-negroCC);
+	border: none;
+	color: var(--c-blanco);
+	padding: 20px 5%;
+	margin: 10px 0;
+	font-family: "Mukta";
+	letter-spacing: 3px;
+	
+}
+.evento>section>div:first-child input::placeholder{
+	color: var(--c-blanco);
+	font-family: "Mukta";
+	letter-spacing: 3px;
+	text-transform: uppercase;
+}
+
+
+.evento>section>div:first-child form select{
+	
+	width: clamp( 150px, 40%, 254px); 
+	padding: 10px 2%;
+	margin: 0 1% 0 0;
+	background-color: var(--c-negroCC);
+	border: none;
+	color: var(--c-blanco);
+	font-family: "Mukta";
+	text-transform: uppercase;
+	letter-spacing: 3px;
+}
+
+.evento>section>div:first-child input:last-child{
+	width: 250px;
+	margin-top: 20px;
+	padding: 10px 20px;
+	cursor: pointer;
+}
+
+.evento>section>div:last-child{
+	width: 40%;
+	background-position: center;
+	background-repeat: no-repeat;
+	background-size: cover;
+	float: left;
+	position: relative;
+	z-index: -3;
+	top: 0;
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+}
+
+.evento>section>div:last-child h1{
+	margin: 15px 0 45px;
+	font-size: 1.6em;
+	font-family: "Mukta";
+	text-transform: uppercase;
+	letter-spacing: 3px;
+	color: var(--c-blanco);
+	position: inherit;
+}
+
+.evento>section>div:last-child a{
+	font-size: 1em;
+	font-family: "Mukta";
+	color: var(--c-blanco);
+	margin: 10px 0;
+	letter-spacing: 3px;
+	text-transform: uppercase;
+	position: inherit;
+}
+
+.evento>section>div:last-child a span{
+	font-size: 1em;
+	position: inherit;
+} 
+
+
+
+/*Q i-menu*/
+@media(max-width:1250px){
+	.carta-s .b-carta .b-c>div{
+		width: 90%;
+	}
+}
+
+
+@media(max-width:1150px){
+	main .b-especial .i-especial section>div.box-ie:nth-child(2)::after{
+		display: none;
+	}
+	main .b-especial .i-especial section>div.box-ie:nth-child(3)::after{
+		display: none;
+	}
+	main .b-especial .i-especial section>div.box-ie:last-child::after{
+		display: none;
+	}
+	main .b-especial .i-especial section>div.box-ie:nth-child(2),
+	main .b-especial .i-especial section>div.box-ie:last-child{
+		margin-top: 0;
+	}
+	main .b-especial .i-especial section{
+		justify-content: space-around;
+	}
+	main .b-especial .i-especial section {
+		width: 100%;
+		padding: 10px 0;
+	}
+	main .nosotros >div:last-child{
+		display: none;
+	}
+	main .nosotros >div:first-child{
+		width: 90%;
+		padding: 80px 5%;
+	}
+
+	
+
+}
+
+
+@media(max-width:1100px){
+
+	/*** HEADER****/
+	.parallax{
+		background-size: 180%;
+	}
+}
+
+
+
+@media (max-width:900px) {
+	/*** HEADER****/
+	
+	.i-menu{
+		display: none;
+	}
+	.m-menu{
+		display: none;
+	}
+	.r-menu{
+		display: block;
+	}
+	.menu-fixed{
+		display: none;
+	}
+
+}
+
+
+@media(max-width:800px){
+	.evento>section{
+		width: 100%;
+	}
+	header{
+		height: 80%;
+	}
+	
+	
+}
+
+
+
+
+@media (max-width:750px){
+	/*** HEADER****/
+	.b-inicio h1{
+		font-size: 1.7em;
+		margin-bottom: 50px;
+	}
+	
+	.b-inicio h2{
+		font-size: 0.9em;
+		margin-top: 115px;
+	}
+	.r-menu img{
+		width: 130px;
+	}
+	.a.btn-m{
+		padding: 10px 20px;
+		font-size: 0.8em;
+	}
+	.parallax{
+		background-size: 280%;
+	}
+	.b-inicio .btn-bajar a img:first-child{
+		width: 35px;
+		height: 15px;
+	
+	}
+	.b-inicio .btn-bajar a img:last-child{
+		width: 50px;
+		height: 30px;
+	}
+	.b-inicio .btn-bajar{
+		margin-top: 45px;
+	}
+	main .b-especial .i-especial section{
+		flex-wrap: nowrap;
+		flex-direction: column;
+		height: 1100px;
+	}
+	main .b-especial .i-especial section>div.box-ie {
+		width: 70%;
+		margin-top: 30px;
+	}
+	main .b-especial .i-especial section>div.box-ie:nth-child(2),
+	main .b-especial .i-especial section>div.box-ie:last-child{
+		width: 70%;
+		margin-top: 30px;
+	}
+}
+
+@media (max-width:670px){
+	.b-c div div img{
+		width: 60px;
+		margin-right: 8%;
+	}
+	.carta-s .b-carta .b-c>div>div>div h1 {
+		font-size: 1em;
+	}
+	.carta-s .b-carta .b-c>div>div>div h2{
+		font-size: 0.8em;
+	}
+	.carta-s .b-carta nav ul li{
+		font-size: 0.8em;
+	}
+	.evento>section>div:first-child{
+		width: 90%;
+		padding: 50px 5%;
+	}
+	.evento>section>div:last-child{
+		width: 100%;
+	}
+
+	.evento>section>div:last-child h1{
+		margin-top: 50px;
+	}
+	.evento>section>div:last-child a:last-child{
+		margin-bottom: 80px;
+	}
+	.evento>section {
+		flex-direction: column;
+	}
+}
+@media (max-width:550px) or (max-width:670){
+	header{
+			height: 80%;
+	}
+	.b-inicio h2{
+			font-size: 0.9em;
+			margin-top: 65px;
+	}
+	
+	.evento {
+		background-size: 200%;
+	}
+	
+}
+
+/******** Footer*************/
+
+
+footer{
+	width: 100%;
+    height: 350px;
+    background-color: var(--c-negroC);
+    position: relative;
+    z-index: 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    margin-top: -150px;
+}
+
+footer img{
+	width: 200px;
+	margin-top: 200px;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
